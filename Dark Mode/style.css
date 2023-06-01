@@ -1,0 +1,23 @@
+:root{
+    --cor-fundo-claro: #fff;
+    --cor-texto-claro: #333;
+
+    --cor-fundo-escuro: #333;
+    --cor-texto-escuro: #fff;
+}
+
+body{
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto-claro);
+}
+
+body.escuro{
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-escuro);
+}
+
+button img{
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+}
