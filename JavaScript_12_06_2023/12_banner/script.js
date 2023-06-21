@@ -7,14 +7,16 @@ let time = 2000, //tempo do setInterval
    console.log(images)
 
    function nextImage() { 
-    images[currentImageIndex].classList.remove('selected');
+    // images[currentImageIndex].classList.remove ("selected", "animate__animated", "animate__fadeInLeft");
+    images[currentImageIndex].classList.remove ("selected");
+
     currentImageIndex++
 
     if(currentImageIndex >= images.length) {
         currentImageIndex = 0
     }
-
-    images[currentImageIndex].classList.add('selected')
+    // images[currentImageIndex].classList.add("selected", "animate__animated", "animate__fadeInLeft");
+    images[currentImageIndex].classList.add("selected");
 
     }
 

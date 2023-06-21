@@ -5,8 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tradutor de Libras</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   
+   <header>
+    <h1>Tradutor de Libras</h1>
+   </header>
+
+   <main>
+    <div class="form">
+        <label for="texto">Digite o texto a ser traduzido:</label>
+        <input type="text" id="texto" placeholder="Digite o texto a ser traduzido">
+        <button id="btn-traduzir">Traduzir</button>
+    </div>
+
+    <div class="resultado">
+        <p id="texto-traduzido"></p>
+    </div>
+   </main>
+
+   <footer>
+    <p>Desenvolvido por Hail</p>
+   </footer>
+
+   <script src="script.js"></script>
 </body>
 </html>
