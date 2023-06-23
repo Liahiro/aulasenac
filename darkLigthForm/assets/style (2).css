@@ -173,12 +173,8 @@
 
 /* darkmode */
 
-body.active #container{
-    background: rgb(19, 18, 18);
-}
-
 body.active #login_form{
-    background-color: var(--color-purple-50);
+    background: rgb(19, 18, 18);
     color: white;
 }
 
@@ -195,8 +191,9 @@ body.active #social_media i:hover{
 }
 
 body.active .input-field input{
-    background-color: var(--color-purple-50);
+    background-color: transparent;
     outline: none;
+    color: white;
 }
 
 body.active .input-box > label{

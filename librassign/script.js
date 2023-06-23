@@ -1,62 +1,31 @@
-const traducao = {
-    a: 'A',
-    b: 'B',
-    c: 'C',
-    d: 'D',
-    e: 'E',
-    f: 'F',
-    g: 'G',
-    h: 'H',
-    i: 'I',
-    j: 'J',
-    k: 'K',
-    l: 'L',
-    m: 'M',
-    n: 'N',
-    o: 'O',
-    p: 'P',
-    q: 'Q',
-    r: 'R',
-    s: 'S',
-    t: 'T',
-    u: 'U',
-    v: 'V',
-    w: 'W',
-    x: 'X',
-    y: 'Y',
-    z: 'Z',
-    '!': '!',
-    '?': '?',
-    '.': '.'
-}
+print("Diga algo")
+Audio = r.listen(source)
 
-var text = document.querySelector("#texto-traduzido")
+text = r.recognize_google(audio)
 
-var btn = document.querySelector("#btn-traduzir")
+const recognition = new webkitSpeechRecognition();
 
-// var text = texto.nodeValue
+recognition.lang = "pt-BR";
 
-// var res = document.querySelector(".resultado p")
+recognition.onresult = function(event) {
+    const text = event.results[0]
+    [0].transcript;
 
-function traduzirTexto(texto) {
-    let resultado = '';
-    for (let i = 0; i < texto.lenght; i++) {
-        if (traducao[texto[i].toLowerCase()]) {
-            resultado += traducao[texto[i].toLowerCase()] + '';
-        } else {
-            resultado += texto[i];
-        }
-    }
+    const params = new URLSearchParams({
+        text: text,
+        tokens: "handtalk",
+        app_id: "your_app_id",
+        app_secret: "your_app_secret"
+    });
 
-    console.log(resultado);
-//     console.log("1");
+    fetch("https://api.handtalk.me/translate?" + params)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.translation);
+    })
+    .catch(error => console.error(error));
+};
 
-// text.textContent = resultado
-
-// return resultado;
-}
-
-btn.addEventListener('click', traduzirTexto)
-
-// traduzirTexto(texto.nodeValue)
-
+document.getElementById("start-btn").addEventListener("click", function() {
+    recognition.start();
+});
